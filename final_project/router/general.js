@@ -29,13 +29,14 @@ public_users.get('/isbn/:isbn', function (req, res) {
 public_users.get('/author/:author', function (req, res) {
     const authorBooks = Object.values(books).filter(
         (book) => book.author.toLowerCase() === req.params.author.toLowerCase()
-      );
+    );
 
-      if (authorBooks.length > 0) {
+    if (authorBooks.length > 0) {
         return res.status(200).send(JSON.stringify(authorBooks, null, 4));
-      } else {
+    } else {
         return res.status(404).json({ message: "No books by that author." });
-      }});
+    }
+});
 
 // Get all books based on title
 public_users.get('/title/:title', function (req, res) {
