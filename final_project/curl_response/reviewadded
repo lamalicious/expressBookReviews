@@ -1,0 +1,11 @@
+curl -X PUT http://localhost:5000/customer/auth/review/1 \
+  -H "Content-Type: application/json" \
+  -d '{"review":"This book was great!"}' \
+  -b cookies.txt
+{"message":"Book review updated."}
+
+curl -X PUT http://localhost:5000/customer/auth/review/1 \
+  -H "Content-Type: application/json" \
+  -d '{"review":"This book was great!"}' \ 
+  -b cookies.txt
+{"message":"Book review updated.","book":"{\n    \"author\": \"Chinua Achebe\",\n    \"title\": \"Things Fall Apart\",\n    \"reviews\": {\n        \"test\": \"This book was great!\"\n    }\n}"}
