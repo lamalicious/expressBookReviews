@@ -48,7 +48,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
         books[isbn].reviews[user] = review;
         res.status(200).json({
             message: "Book review updated.",
-            book: JSON.stringify(books[isbn], null, 4)
+            book: books[isbn]
         });
     }
 });
